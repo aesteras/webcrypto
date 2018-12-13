@@ -1,6 +1,8 @@
 const ITERATIONS = 250000;
 const SALT_LENGTH = 32;
 const IV_LENGTH = 12;
+// TODO: Store the number of iterations somewhere for each encrypted package.
+// NOTE: Concatenation is troublesome, maybe store separately in the db.
 
 const encode = d => new TextEncoder('utf-8').encode(d);
 const decode = e => new TextDecoder('utf-8').decode(e);
