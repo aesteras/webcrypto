@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Index</h1>
+    <form onsubmit="return false;">
+        <label for="decrypted">Text to encrypt</label>
+        <br>
+        <textarea name="toEncrypt" id="decrypted" cols="30" rows="10" placeholder="Type your text here."></textarea>
+        <br>
+        <label for="encrypted">Encrypted text</label>
+        <br>
+        <textarea name="encrypted" id="encrypted" cols="30" rows="10" disabled></textarea>
+        <br>
+        <input type="button" value="Encrypt" onclick="encrypt();">
+        <input type="button" value="Decrypt" onclick="decrypt();">
+    </form>
+</body>
+</html>
