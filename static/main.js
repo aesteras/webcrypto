@@ -3,7 +3,6 @@ const encode = d => new TextEncoder('utf-8').encode(d);
 const decode = e => new TextDecoder('utf-8').decode(e);
 
 worker.onmessage = event => {
-  console.log(event.data);
   document.getElementById('encrypted').value = decode(event.data.encryptedMessage);
   document.getElementById('decrypted').value = decode(event.data.decryptedMessage);
 };
@@ -23,7 +22,7 @@ const encrypt = () => {
 const decrypt = () => {
   const dataObject = {
     encryptedMessage: new Uint8Array([]),
-    decryptedMessage: encode(document.getElementById('decrypted').value),
+    decryptedMessage: encode(document.getElementById('encrypted').value),
     passwordAsBytes: encode(prompt('Enter your password:'))
   };
   post(dataObject);
