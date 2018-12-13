@@ -4,8 +4,8 @@ const path = require('path');
 const fs = require('fs');
 
 const options = {
-    key: fs.readFileSync('ssl/key.pem'),
-    cert: fs.readFileSync('ssl/cert.pem')
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
 };
 
 const app = express();

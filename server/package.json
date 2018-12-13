@@ -7,6 +7,12 @@
     "test": "nodemon server.js",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "MIT"
+  "author": "Andreu Esteras",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  }
 }
