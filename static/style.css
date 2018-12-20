@@ -2,7 +2,8 @@
   --ff: 'Lato', 'Roboto', Arial, sans-serif;
   --bd: 1px solid black;
   --br: 5px;
-  --pd: 5px 0px;
+  --pd: 10px;
+  --vpd: 5px 0px;
   --fwl: 300;
   --fwn: 500;
   --fwb: 700;
@@ -38,6 +39,10 @@ h1 {
   line-height: var(--lhb);
 }
 
+form {
+  width: 100%;
+}
+
 label {
   font-weight: var(--fwn);
   font-size: var(--fsn);
@@ -45,13 +50,14 @@ label {
 }
 
 textarea, textarea:disabled {
+  box-sizing: border-box;
   background-color: white;
   width: 100%;
   height: 256px;
   resize: none;
   border: var(--bd);
   border-radius: var(--br);
-  padding: var(--br);
+  padding: var(--pd);
   font-family: var(--ff);
   font-weight: var(--fwl);
   font-size: var(--fsl);
@@ -61,7 +67,7 @@ textarea, textarea:disabled {
 .btn {
   height: 48px;
   width: 128px;
-  padding: var(--br);
+  padding: var(--pd);
   font-family: var(--ff);
   border: var(--bd);
   border-radius: var(--br);
@@ -80,7 +86,7 @@ textarea, textarea:disabled {
 .center {
   max-width: 960px;
   margin: 0 auto;
-  padding: var(--pd);
+  padding: var(--vpd);
 }
 
 .hspacer {
