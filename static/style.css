@@ -1,6 +1,5 @@
 :root {
   --ff: 'Lato', 'Roboto', Arial, sans-serif;
-  --bd: 1px solid black;
   --br: 5px;
   --pd: 10px;
   --vpd: 5px 0px;
@@ -13,9 +12,9 @@
   --lhl: 20px;
   --lhn: 25px;
   --lhb: 45px;
-  --cd: #101010;
-  --cn: #212121;
-  --cl: #323232;
+  --cdd: #101010;
+  --cdn: #434343;
+  --cdl: #767676;
 }
 
 html, body {
@@ -25,12 +24,13 @@ html, body {
 body {
   margin: 0;
   font-family: var(--ff);
-  color: var(--cd);
+  background-color: white;
+  color: var(--cdd);
 }
 
 header {
-  background-color: var(--cd);
-  color: white;
+  background-color: white;
+  color: var(--cdd);
 }
 
 h1 {
@@ -52,10 +52,11 @@ label {
 textarea, textarea:disabled {
   box-sizing: border-box;
   background-color: white;
+  color: var(--cdn);
   width: 100%;
   height: 256px;
   resize: none;
-  border: var(--bd);
+  border: 1px solid var(--cdl);
   border-radius: var(--br);
   padding: var(--pd);
   font-family: var(--ff);
@@ -64,23 +65,26 @@ textarea, textarea:disabled {
   line-height: var(--lhl);
 }
 
+a {
+  color: inherit;
+}
+
 .btn {
   height: 48px;
   width: 128px;
   padding: var(--pd);
   font-family: var(--ff);
-  border: var(--bd);
+  border: 1px solid var(--cdl);
   border-radius: var(--br);
   font-weight: var(--fwn);
   font-size: var(--fsn);
   line-height: var(--lhn);
-  background-color: var(--cn);
-  color: white;
+  background-color: white;
+  color: var(--cdl);
   cursor: pointer;
 } .btn:hover {
-  background-color: var(--cl);
-} .btn:active {
-  background-color: var(--cd);
+  border: 1px solid var(--cdd);
+  color: var(--cdd);
 }
 
 .center {
