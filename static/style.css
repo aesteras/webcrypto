@@ -82,3 +82,8 @@ textarea, textarea:disabled {
   margin: 0 auto;
   padding: var(--pd);
 }
+
+.hspacer {
+  display: inline-block;
+  width: 1em;
+}
