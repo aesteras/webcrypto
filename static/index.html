@@ -2,24 +2,33 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Index</title>
+    <title>WebCrypto API Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
 </head>
 <body>
-    <h1>Index</h1>
+  <header>
+    <div class="center">
+      <h1>WebCrypto API Demo</h1>
+    </div>
+  </header>
+  <br>
+  <div class="center">
     <form onsubmit="return false;">
-        <label for="decrypted">Text to encrypt</label>
-        <br>
-        <textarea name="toEncrypt" id="decrypted" cols="30" rows="10"></textarea>
-        <br>
-        <label for="encrypted">Encrypted text</label>
-        <br>
-        <textarea name="encrypted" id="encrypted" cols="30" rows="10" disabled></textarea>
-        <br>
-        <input type="button" value="Encrypt" onclick="encrypt();">
-        <input type="button" value="Decrypt" onclick="decrypt();">
+      <label for="decrypted">Decrypted text</label>
+      <br>
+      <textarea name="toEncrypt" id="decrypted"></textarea>
+      <br>
+      <br>
+      <label for="encrypted">Encrypted text</label>
+      <br>
+      <textarea name="encrypted" id="encrypted" disabled></textarea>
+      <br>
+      <br>
+      <input class="btn" type="button" value="Encrypt" onclick="encrypt();">
+      <input class="btn" type="button" value="Decrypt" onclick="decrypt();">
     </form>
+  </div>
 </body>
 </html>

@@ -1,29 +1,31 @@
 const worker = new Worker('worker.js');
-const encode = d => new TextEncoder('utf-8').encode(d);
-const decode = e => new TextDecoder('utf-8').decode(e);
 
-worker.onmessage = event => {
-  document.getElementById('encrypted').value = decode(event.data.encryptedMessage);
-  document.getElementById('decrypted').value = decode(event.data.decryptedMessage);
+const UTF8 = {
+  encode: d => new TextEncoder('utf-8').encode(d),
+  decode: e => new TextDecoder('utf-8').decode(e)
 };
-
-const post = dataObject => worker.postMessage(dataObject,
-  [dataObject.encryptedMessage.buffer, dataObject.decryptedMessage.buffer]);
 
 const encrypt = () => {
   const dataObject = {
-    encryptedMessage: encode(document.getElementById('decrypted').value),
-    decryptedMessage: new Uint8Array([]),
-    passwordAsBytes: encode(prompt('Enter your password:'))
+    function: 'encrypt',
+    encryptedMessage: new Uint8Array(),
+    decryptedMessage: UTF8.encode(document.getElementById('decrypted').value),
+    passwordAsBytes: UTF8.encode(prompt('Enter your password:'))
   };
-  post(dataObject);
+  worker.postMessage(dataObject, [dataObject.encryptedMessage.buffer, dataObject.decryptedMessage.buffer]);
 }
 
 const decrypt = () => {
   const dataObject = {
-    encryptedMessage: new Uint8Array([]),
-    decryptedMessage: encode(document.getElementById('encrypted').value),
-    passwordAsBytes: encode(prompt('Enter your password:'))
+    function: 'decrypt',
+    encryptedMessage: UTF8.encode(document.getElementById('encrypted').value),
+    decryptedMessage: new Uint8Array(),
+    passwordAsBytes: UTF8.encode(prompt('Enter your password:'))
   };
-  post(dataObject);
+  worker.postMessage(dataObject, [dataObject.encryptedMessage.buffer, dataObject.decryptedMessage.buffer]);
 }
+
+worker.onmessage = event => {
+  document.getElementById('encrypted').value = UTF8.decode(event.data.encryptedMessage);
+  document.getElementById('decrypted').value = UTF8.decode(event.data.decryptedMessage);
+};

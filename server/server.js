@@ -18,5 +18,5 @@ const server = https.createServer(options, app);
 const port = 443;
 server.listen(port);
 server.on('listening', () => {
-    console.log('Server listening on port ' + port + '.');
+    console.log('Server listening on https://localhost:' + port + ' .');
 });
